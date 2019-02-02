@@ -16,5 +16,5 @@ class TestUrlResolve(TestCase):
                 url = reverse("category_x:static_render",
                               kwargs=dict(template_name=template_name))
                 res = self.client.get(url)
-                self.assertEqual("/category-x/{}/".format(template_name), url)
+                self.assertEqual("/category-x/{}".format(template_name), url)
                 self.assertEqual(200, res.status_code)
